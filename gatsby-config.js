@@ -1,8 +1,10 @@
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: `Raquel y Andrei`,
+    description: `Raquel y Andrei`,
+    author: `@algm85, @cso1992`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +27,25 @@ module.exports = {
         tailwind: true,
         purgeOnly: ["src/css/style.css"]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`)
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`
   ]
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
+import LanguageSelector from "./LanguageSelector";
+import NavMenu from './NavMenu';
+import Helmet from "react-helmet";
 
-import Header from "./header";
-
-function Layout({ children }) {
+function Layout({ children, pageContext: { locale, availableLocales } }) {
   return (
     <StaticQuery
       query={graphql`
@@ -17,36 +18,22 @@ function Layout({ children }) {
         }
       `}
       render={data => (
-        <div className="flex flex-col font-sans min-h-screen text-grey-darkest">
-          <Header siteTitle={data.site.siteMetadata.title} />
+        <>
+          <Helmet
+            bodyAttributes={{
+              class: "font-sans antialiased text-grey-300 bg-neutral-100"
+            }}
+          />
 
-          <div className="flex flex-col flex-1 md:justify-center max-w-xl mx-auto px-4 py-8 md:p-8 w-full">
-            {children}
-          </div>
+          <LanguageSelector
+            locale={locale}
+            availableLocales={availableLocales}
+          />
 
-          <footer className="bg-blue">
-            <div className="flex justify-between max-w-xl mx-auto p-4 md:p-8 text-sm">
-              <p className="text-white">
-                Created by{" "}
-                <a
-                  href="https://taylorbryant.blog"
-                  className="font-bold no-underline text-white"
-                >
-                  Taylor Bryant
-                </a>
-              </p>
+          <NavMenu />
 
-              <p>
-                <a
-                  href="https://github.com/taylorbryant/gatsby-starter-tailwind"
-                  className="font-bold no-underline text-white"
-                >
-                  GitHub
-                </a>
-              </p>
-            </div>
-          </footer>
-        </div>
+          {children}
+        </>
       )}
     />
   );
