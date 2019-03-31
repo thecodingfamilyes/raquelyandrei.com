@@ -18,11 +18,13 @@
     "graphql": "^14.1.1",
     "i18next": "^15.0.7",
     "moment": "^2.24.0",
+    "netlify-identity-widget": "^1.5.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-i18next": "^10.5.3"
+    "react-i18next": "^10.5.3",
+    "styled-components": "^4.2.0"
   },
   "keywords": [
     "gatsby",

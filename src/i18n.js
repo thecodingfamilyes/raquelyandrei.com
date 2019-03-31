@@ -1,27 +1,27 @@
-import i18n from "i18next";
-export const defaultLocale = "es";
-export const defaultNamespace = "messages";
+import i18n from 'i18next';
+export const defaultLocale = 'es';
+export const defaultNamespace = 'messages';
 
 export const options = {
-  fallbackLng: defaultLocale,
-  ns: [defaultNamespace],
-  defaultNS: defaultNamespace,
+    fallbackLng: defaultLocale,
+    ns: [defaultNamespace],
+    defaultNS: defaultNamespace,
 
-  debug: false,
+    debug: false,
 
-  interpolation: {
-    escapeValue: false // not needed for react!!
-  },
+    interpolation: {
+        escapeValue: false // not needed for react!!
+    },
 
-  react: {
-    wait: false
-  },
+    react: {
+        wait: false
+    },
 
-  initImmediate: false // Important for SSR to work
+    initImmediate: false // Important for SSR to work
 };
 
 export default () => {
-  i18n.init(options);
+    i18n.init(options);
 
-  return i18n;
+    return i18n;
 };
