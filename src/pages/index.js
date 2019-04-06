@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import withI18next from '../components/withI18next';
+
 import Countdown from '../components/Countdown';
 import { StaticQuery, graphql } from 'gatsby';
 import SvgImage from '../components/SvgImage';
 
-function IndexPage({ pageContext: { locale }, t, pageContext }) {
+function IndexPage({ pageContext }) {
     return (
         <Layout pageContext={pageContext}>
             <SEO title="Portada" />
@@ -38,9 +38,9 @@ function IndexPage({ pageContext: { locale }, t, pageContext }) {
                 )}
             />
 
-            <Countdown locale={locale} />
+            <Countdown />
         </Layout>
     );
 }
 
-export default withI18next()(IndexPage);
+export default IndexPage;

@@ -1,5 +1,6 @@
 import netlifyIdentity from 'netlify-identity-widget';
 import React, { Component, createContext } from 'react';
+import once from 'lodash.once';
 
 const AuthContext = createContext({
     isLoggedIn: false,
@@ -11,6 +12,8 @@ class Auth extends Component {
     constructor(props) {
         super(props);
 
+        this.identity = null;
+
         this.state = {
             isLoggedIn: false,
             currentUser: null,
@@ -21,14 +24,26 @@ class Auth extends Component {
                 this.logout();
             },
         };
+
+        this.initIdentity = once(() => {
+            this.identity.init();
+        });
     }
 
     componentDidMount() {
-        netlifyIdentity.on('init', user => this.setUser(user));
-        netlifyIdentity.on('login', user => this.setUser(user));
-        netlifyIdentity.on('logout', () => this.setLoggedOut());
+        if (!this.identity) {
+            this.identity = netlifyIdentity;
+        }
 
-        netlifyIdentity.init();
+        this.identity.on('init', user => this.setUser(user));
+        this.identity.on('login', user => this.setUser(user));
+        this.identity.on('logout', () => this.setLoggedOut());
+
+        this.initIdentity();
+    }
+
+    componentWillUnmount() {
+        this.identity = null;
     }
 
     setUser(user = null) {
@@ -38,7 +53,7 @@ class Auth extends Component {
                 isLoggedIn: true,
             });
 
-            return this.state.currentUser;
+            return user.user_metadata.full_name;
         }
 
         this.setState({
@@ -57,11 +72,11 @@ class Auth extends Component {
     }
 
     login() {
-        netlifyIdentity.open();
+        this.identity.open();
     }
 
     logout() {
-        netlifyIdentity.logout();
+        this.identity.logout();
     }
 
     render() {

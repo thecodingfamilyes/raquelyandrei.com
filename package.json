@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
-  "version": "2.2.2",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "name": "raquelyandrei.com",
+  "description": "Sitio de la boda de Raquel y Andrei",
+  "version": "0.1.0",
   "dependencies": {
     "gatsby": "^2.2.6",
     "gatsby-i18n": "^1.1.5",
@@ -17,6 +16,7 @@
     "gatsby-transformer-sharp": "^2.1.17",
     "graphql": "^14.1.1",
     "i18next": "^15.0.7",
+    "lodash.once": "^4.1.1",
     "moment": "^2.24.0",
     "netlify-identity-widget": "^1.5.2",
     "prop-types": "^15.7.2",
@@ -24,6 +24,7 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-i18next": "^10.5.3",
+    "react-simplemde-editor": "^4.0.0",
     "styled-components": "^4.2.0"
   },
   "keywords": [
@@ -56,12 +57,5 @@
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.16.4",
     "tailwindcss": "^1.0.0-beta.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind"
-  },
-  "bugs": {
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
   }
 }

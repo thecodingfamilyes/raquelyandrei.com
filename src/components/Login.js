@@ -14,13 +14,17 @@ function Login() {
                         <>
                             estoy logged in, soy {currentUser}!!
                             <Button onClick={() => logout()}>
-                                {t('Logout')}
+                                {t('Salir')}
                             </Button>
                         </>
                     );
                 }
 
-                return <Button onClick={() => login()}>{t('Login!')}</Button>;
+                return (
+                    <Button onClick={() => login()}>
+                        {t('Identificarme')}
+                    </Button>
+                );
             }}
         </AuthContext.Consumer>
     );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import useInterval from '../hooks/useInterval';
 import { useTranslation } from 'react-i18next';
+import { I18nContext } from '../i18n/I18nContext';
 
 const weddingDate = moment('2019-10-05 11:30:00');
 
@@ -22,24 +23,31 @@ function DiffItem({ value, name }) {
     );
 }
 
-export default function Countdown({ locale }) {
+export default function Countdown() {
     const { t } = useTranslation();
-    moment.locale([locale, 'es']);
 
     let [diff, setDiff] = useState(startDiff);
 
     useInterval(() => {
-    // Your custom logic here
+        // Your custom logic here
         setDiff(calculateDiff(weddingDate));
     }, 1000);
 
     return (
-        <div className="flex items-center content-center justify-center">
-            <DiffItem value={diff.months()} name={t('meses')} />
-            <DiffItem value={diff.days()} name={t('días')} />
-            <DiffItem value={diff.hours()} name={t('horas')} />
-            <DiffItem value={diff.minutes()} name={t('minutos')} />
-            <DiffItem value={diff.seconds()} name={t('segundos')} />
-        </div>
+        <I18nContext.Consumer>
+            {({ locale }) => {
+                moment.locale([locale, 'es']);
+
+                return (
+                    <div className="flex items-center content-center justify-center">
+                        <DiffItem value={diff.months()} name={t('meses')} />
+                        <DiffItem value={diff.days()} name={t('días')} />
+                        <DiffItem value={diff.hours()} name={t('horas')} />
+                        <DiffItem value={diff.minutes()} name={t('minutos')} />
+                        <DiffItem value={diff.seconds()} name={t('segundos')} />
+                    </div>
+                );
+            }}
+        </I18nContext.Consumer>
     );
 }

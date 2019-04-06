@@ -4,7 +4,7 @@ module.exports = {
     siteMetadata: {
         title: 'Raquel y Andrei',
         description: 'Raquel y Andrei',
-        author: '@algm85, @cso1992'
+        author: '@algm85, @cso1992',
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -17,35 +17,41 @@ module.exports = {
                 background_color: '#ffffff',
                 theme_color: '#4dc0b5',
                 display: 'minimal-ui',
-                icon: 'src/images/tailwind-icon.png'
-            }
+                icon: 'src/images/tailwind-icon.png',
+            },
         },
         'gatsby-plugin-postcss',
         {
             resolve: 'gatsby-plugin-purgecss',
             options: {
                 tailwind: true,
-                purgeOnly: ['src/css/style.css']
-            }
+                purgeOnly: ['src/css/style.css'],
+            },
         },
         {
             resolve: 'gatsby-plugin-prefetch-google-fonts',
             options: {
                 fonts: [
                     {
-                        family: 'Roboto'
-                    }
-                ]
-            }
+                        family: 'Roboto',
+                    },
+                    {
+                        family: 'Pacifico',
+                    },
+                    {
+                        family: 'Montserrat',
+                    },
+                ],
+            },
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'images',
-                path: path.join(__dirname, 'src', 'images')
-            }
+                path: path.join(__dirname, 'src', 'images'),
+            },
         },
         'gatsby-plugin-sharp',
-        'gatsby-transformer-sharp'
-    ]
+        'gatsby-transformer-sharp',
+    ],
 };

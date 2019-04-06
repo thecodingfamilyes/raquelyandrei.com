@@ -5,8 +5,10 @@
   "horas": "ore",
   "minutos": "minute",
   "segundos": "secunde",
-  "Nosotros" : "Sua",
-  "La boda" : "Nuntarea",
-  "Libro de firmas" : "Cartea de semnături",
-  "Pregúntanos" : "Întrebați-ne"
+  "Nosotros": "Sua",
+  "La boda": "Nuntarea",
+  "Libro de firmas": "Cartea de semnături",
+  "Pregúntanos": "Întrebați-ne",
+  "Identificarme": "Identificați-mă",
+  "Salir": "Ieșire"
 }
