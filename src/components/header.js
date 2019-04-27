@@ -1,21 +1,21 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import HeaderMenu from './headerMenu';
 
-function Header({ siteTitle }) {
+function Header({ className }) {
   return (
-    <nav>
-      <HeaderMenu/>
+    <nav className={className}>
+      <HeaderMenu />
     </nav>
   );
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  className: PropTypes.string
 };
 
 Header.defaultProps = {
-  siteTitle: ``
+  className: ``
 };
 
 export default Header;
