@@ -11,13 +11,13 @@ const calculateDiff = date => moment.duration(date.diff(moment()));
 const startDiff = calculateDiff(weddingDate);
 
 function DiffItem({ value, name }) {
-    if (value <= 0) {
+    if (value < 0) {
         return null;
     }
 
     return (
         <div className="text-center mx-2">
-            <div className="text-red-600 font-bold text-4xl">{value}</div>
+            <div className="text-red-700 font-bold text-4xl">{value}</div>
             <div>{name}</div>
         </div>
     );
@@ -39,7 +39,7 @@ export default function Countdown() {
                 moment.locale([locale, 'es']);
 
                 return (
-                    <div className="flex items-center content-center justify-center">
+                    <div className="flex items-center content-center justify-center absolute bottom-0 w-full">
                         <DiffItem value={diff.months()} name={t('meses')} />
                         <DiffItem value={diff.days()} name={t('días')} />
                         <DiffItem value={diff.hours()} name={t('horas')} />
