@@ -1,41 +1,46 @@
-import React from "react";
+import React from 'react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import Layout from "../components/homeLayout";
-import SEO from "../components/seo";
-import cover from "../images/index.svg";
+import Countdown from '../components/Countdown';
+import { StaticQuery, graphql } from 'gatsby';
+import SvgImage from '../components/SvgImage';
 
-function IndexPage() {
-  return (
-    <Layout>
-      <SEO
-        title="Home"
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-      />
+function IndexPage({ pageContext }) {
+    return (
+        <Layout pageContext={pageContext}>
+            <SEO title="Portada" />
 
-      <div className="text-center">
-        <img
-          src={cover}
-          className="block mx-auto w-2/3"
-          alt="Raquel&Andrei cover"
-        />
+            <StaticQuery
+                query={graphql`
+                    query {
+                        planeImage: file(
+                            relativePath: { eq: "map-plane.svg" }
+                        ) {
+                            ...ImageWithSVG
+                        }
+                        sealImage: file(
+                            relativePath: { eq: "round-seal.svg" }
+                        ) {
+                            ...ImageWithSVG
+                        }
+                        fullBg: file(
+                            relativePath: { eq: "Illustrations.svg" }
+                        ) {
+                            ...ImageWithSVG
+                        }
+                    }
+                `}
+                render={({ fullBg }) => (
+                    <div className="text-center container m-auto">
+                        <SvgImage {...fullBg} className="w-screen" />
+                    </div>
+                )}
+            />
 
-        <h2 className="bg-yellow inline-block my-8 p-3">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
-
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{" "}
-          <a
-            href="https://tailwindcss.com/"
-            className="font-bold no-underline text-grey-darkest"
-          >
-            Tailwind
-          </a>
-          , a utility-first CSS framework.
-        </p>
-      </div>
-    </Layout>
-  );
+            <Countdown />
+        </Layout>
+    );
 }
 
 export default IndexPage;

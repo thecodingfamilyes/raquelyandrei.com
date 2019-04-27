@@ -1,59 +1,56 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import LanguageSelector from './LanguageSelector';
+import NavMenu from './NavMenu';
+import Helmet from 'react-helmet';
+import { Auth } from '../auth/Auth';
+import withI18next from '../components/withI18next';
+import { I18nContext } from '../i18n/I18nContext';
 
-import Header from "./header";
+function Layout({
+    children,
+    pageContext: { locale, availableLocales },
+    pageContext,
+}) {
+    return (
+        <I18nContext.Provider value={{ locale, availableLocales }}>
+            <Auth>
+                <StaticQuery
+                    query={graphql`
+                        query SiteTitleQuery {
+                            site {
+                                siteMetadata {
+                                    title
+                                }
+                            }
+                        }
+                    `}
+                    render={() => (
+                        <>
+                            <Helmet
+                                bodyAttributes={{
+                                    class:
+                                        'font-sans antialiased text-grey-300 bg-neutral-100',
+                                }}
+                            />
 
-function Layout({ children }) {
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div className="flex flex-col font-sans min-h-screen text-grey-darkest">
-          <Header siteTitle={data.site.siteMetadata.title} />
+                            <LanguageSelector pageContext={pageContext} />
 
-          <div className="flex flex-col flex-1 md:justify-center max-w-xl mx-auto px-4 py-8 md:p-8 w-full">
-            {children}
-          </div>
+                            <NavMenu />
 
-          <footer className="bg-blue">
-            <div className="flex justify-between max-w-xl mx-auto p-4 md:p-8 text-sm">
-              <p className="text-white">
-                Created by{" "}
-                <a
-                  href="https://taylorbryant.blog"
-                  className="font-bold no-underline text-white"
-                >
-                  Taylor Bryant
-                </a>
-              </p>
-
-              <p>
-                <a
-                  href="https://github.com/taylorbryant/gatsby-starter-tailwind"
-                  className="font-bold no-underline text-white"
-                >
-                  GitHub
-                </a>
-              </p>
-            </div>
-          </footer>
-        </div>
-      )}
-    />
-  );
+                            {children}
+                        </>
+                    )}
+                />
+            </Auth>
+        </I18nContext.Provider>
+    );
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    pageContext: PropTypes.object.isRequired,
 };
 
-export default Layout;
+export default withI18next()(Layout);
