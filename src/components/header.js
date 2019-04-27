@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
-import HeaderMenu from './headerMenu';
+import NavMenu from './NavMenu';
 
 function Header({ className }) {
   return (
     <nav className={className}>
-      <HeaderMenu />
+      <NavMenu />
     </nav>
   );
 }
