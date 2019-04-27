@@ -125,7 +125,10 @@ let colors = {
   pink: "#f66d9b",
   "pink-light": "#fa7ea8",
   "pink-lighter": "#ffbbca",
-  "pink-lightest": "#ffebef"
+  "pink-lightest": "#ffebef",
+
+  // Custom colors
+  primary: "#3F3D56"
 };
 
 module.exports = {
@@ -416,7 +419,11 @@ module.exports = {
   |
   */
 
-  borderColors: global.Object.assign({ default: colors["grey-light"] }, colors),
+  borderColors: global
+    .Object
+    .assign({
+      default: colors["grey-light"]
+    }, colors),
 
   /*
   |-----------------------------------------------------------------------------
@@ -859,12 +866,16 @@ module.exports = {
   modules: {
     appearance: ["responsive"],
     backgroundAttachment: ["responsive"],
-    backgroundColors: ["responsive", "hover", "focus"],
+    backgroundColors: [
+      "responsive", "hover", "focus"
+    ],
     backgroundPosition: ["responsive"],
     backgroundRepeat: ["responsive"],
     backgroundSize: ["responsive"],
     borderCollapse: [],
-    borderColors: ["responsive", "hover", "focus"],
+    borderColors: [
+      "responsive", "hover", "focus"
+    ],
     borderRadius: ["responsive"],
     borderStyle: ["responsive"],
     borderWidths: ["responsive"],
@@ -873,7 +884,9 @@ module.exports = {
     flexbox: ["responsive"],
     float: ["responsive"],
     fonts: ["responsive"],
-    fontWeights: ["responsive", "hover", "focus"],
+    fontWeights: [
+      "responsive", "hover", "focus"
+    ],
     height: ["responsive"],
     leading: ["responsive"],
     lists: ["responsive"],
@@ -892,14 +905,20 @@ module.exports = {
     pointerEvents: ["responsive"],
     position: ["responsive"],
     resize: ["responsive"],
-    shadows: ["responsive", "hover", "focus"],
+    shadows: [
+      "responsive", "hover", "focus"
+    ],
     svgFill: [],
     svgStroke: [],
     tableLayout: ["responsive"],
     textAlign: ["responsive"],
-    textColors: ["responsive", "hover", "focus"],
+    textColors: [
+      "responsive", "hover", "focus"
+    ],
     textSizes: ["responsive"],
-    textStyle: ["responsive", "hover", "focus"],
+    textStyle: [
+      "responsive", "hover", "focus"
+    ],
     tracking: ["responsive"],
     userSelect: ["responsive"],
     verticalAlign: ["responsive"],
@@ -923,12 +942,9 @@ module.exports = {
   |
   */
 
-  plugins: [
-    require("tailwindcss/plugins/container")({
-      // center: true,
-      // padding: '1rem',
-    })
-  ],
+  plugins: [require("tailwindcss/plugins/container")({
+      // center: true, padding: '1rem',
+    })],
 
   /*
   |-----------------------------------------------------------------------------

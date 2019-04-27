@@ -1,8 +1,8 @@
 import React from "react";
 
-import Layout from "../components/layout";
+import Layout from "../components/homeLayout";
 import SEO from "../components/seo";
-import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
+import cover from "../images/index.svg";
 
 function IndexPage() {
   return (
@@ -14,9 +14,9 @@ function IndexPage() {
 
       <div className="text-center">
         <img
-          src={catAndHumanIllustration}
-          className="block mx-auto w-1/2"
-          alt="Cat and human sitting on a couch"
+          src={cover}
+          className="block mx-auto w-2/3"
+          alt="Raquel&Andrei cover"
         />
 
         <h2 className="bg-yellow inline-block my-8 p-3">
