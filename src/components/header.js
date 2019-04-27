@@ -2,11 +2,14 @@ import PropTypes from "prop-types";
 import React from "react";
 import NavMenu from './NavMenu';
 
-function Header({ className }) {
+import LanguageSelector from './LanguageSelector';
+
+function Header({ className, pageContext }) {
   return (
-    <nav className={className}>
+    <div className={className}>
+      <LanguageSelector pageContext={pageContext} />
       <NavMenu />
-    </nav>
+    </div>
   );
 }
 

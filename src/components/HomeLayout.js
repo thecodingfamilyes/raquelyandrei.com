@@ -2,24 +2,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
-function HomeLayout({ children }) {
+import Base from './Base';
+
+function HomeLayout({ children, pageContext }) {
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteHomeTitleQuery {
-          site {
-            siteMetadata {
-              title
+    <Base pageContext={pageContext}>
+      <StaticQuery
+        query={graphql`
+          query SiteHomeTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
             }
           }
-        }
-      `}
-      render={data => (
-        <div className="flex flex-col flex-1 md:justify-center mx-auto py-8 w-full home-layout w-screen h-screen">
-          {children}
-        </div>
-      )}
-    />
+        `}
+        render={() => (
+            <div className="flex flex-col flex-1 md:justify-center mx-auto py-8 w-full home-layout w-screen h-screen">
+              {children}
+            </div>
+        )}
+      />
+    </Base>
   );
 }
 

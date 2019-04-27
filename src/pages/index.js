@@ -40,7 +40,7 @@ function IndexPage({ pageContext }) {
                 `}
                 render={({ fullBg, site }) => (
                     <div className="text-center">
-                        <Header className="absolute top-0 w-full" siteTitle={site.siteMetadata.title} />
+                        <Header className="absolute top-0 w-full" siteTitle={site.siteMetadata.title} pageContext={pageContext} />
                         <SvgImage {...fullBg} className="w-screen h-screen pt-8" />
                         <Countdown />
                     </div>
