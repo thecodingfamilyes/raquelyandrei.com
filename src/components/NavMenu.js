@@ -22,11 +22,6 @@ export default function NavMenu() {
             url: '/firmas',
             key: 'firmas',
         },
-        {
-            title: t('Pregúntanos'),
-            url: '/preguntas',
-            key: 'preguntas',
-        },
     ];
 
     return (
