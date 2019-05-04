@@ -6,7 +6,7 @@ import Countdown from '../components/Countdown';
 import { StaticQuery, graphql } from 'gatsby';
 import SvgImage from '../components/SvgImage';
 
-import Header from "../components/header";
+import Header from '../components/header';
 
 function IndexPage({ pageContext }) {
     return (
@@ -40,7 +40,7 @@ function IndexPage({ pageContext }) {
                 `}
                 render={({ fullBg, site }) => (
                     <div className="text-center">
-                        <Header className="absolute top-0 w-full" siteTitle={site.siteMetadata.title} pageContext={pageContext} />
+                        <Header isHome className="absolute top-0 w-full" siteTitle={site.siteMetadata.title} pageContext={pageContext} />
                         <SvgImage {...fullBg} className="w-screen h-screen pt-8" />
                         <Countdown />
                     </div>

@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LanguageSelector from './LanguageSelector';
-import NavMenu from './NavMenu';
+//import LanguageSelector from './LanguageSelector';
+//import NavMenu from './NavMenu';
+
+import Header from './header';
 
 import Base from './Base';
 
 function Layout({ children, pageContext }) {
     return (
         <Base pageContext={pageContext}>
-            <LanguageSelector pageContext={pageContext} />
-
-            <NavMenu />
+            <Header pageContext={pageContext} />
 
             {children}
         </Base>
