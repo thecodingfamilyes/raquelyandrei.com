@@ -17,6 +17,7 @@ class Auth extends Component {
         this.state = {
             isLoggedIn: false,
             currentUser: null,
+            currentUserData: {},
             login: () => {
                 this.login();
             },
@@ -50,6 +51,7 @@ class Auth extends Component {
         if (user && user.email) {
             this.setState({
                 currentUser: user.user_metadata.full_name,
+                currentUserData: user,
                 isLoggedIn: true,
             });
 

@@ -29,7 +29,6 @@ export default function Countdown() {
     let [diff, setDiff] = useState(startDiff);
 
     useInterval(() => {
-        // Your custom logic here
         setDiff(calculateDiff(weddingDate));
     }, 1000);
 

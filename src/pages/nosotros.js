@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import PersonCard from '../components/PersonCard';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-//import { useTranslation } from 'react-i18next';
+
 import MenuContext from '../context/PageContext';
 
 function Nosotros({ pageContext }) {

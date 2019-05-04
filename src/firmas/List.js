@@ -7,7 +7,7 @@ export default function List({ items }) {
     }
 
     return (
-        <div>
+        <div className="container mx-auto px-5">
             {items.map((item, k) => (
                 <Item key={k} {...item} />
             ))}
