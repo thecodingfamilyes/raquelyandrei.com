@@ -1,84 +1,59 @@
-import netlifyIdentity from 'netlify-identity-widget';
 import React, { Component, createContext } from 'react';
-import once from 'lodash.once';
+import {
+    login,
+    handleAuthentication,
+    getProfile,
+    isAuthenticated,
+} from './auth0';
 
 const AuthContext = createContext({
-    isLoggedIn: false,
+    isLoggedIn: isAuthenticated(),
     currentUser: null,
-    login: () => {},
+    currentUserData: getProfile(),
+    login,
+    logout: () => {},
+    handleAuth: () => {
+        handleAuthentication();
+    },
 });
 
 class Auth extends Component {
     constructor(props) {
         super(props);
 
-        this.identity = null;
-
         this.state = {
-            isLoggedIn: false,
+            isLoggedIn: isAuthenticated(),
             currentUser: null,
-            currentUserData: {},
-            login: () => {
-                this.login();
-            },
+            currentUserData: getProfile(),
+            login,
             logout: () => {
-                this.logout();
+                this.setState({
+                    isLoggedIn: false,
+                    currentUser: null,
+                    currentUserData: {},
+                });
+
+                localStorage.setItem('isLoggedIn', false);
+            },
+            handleAuth: () => {
+                this.handleAuth();
             },
         };
-
-        this.initIdentity = once(() => {
-            this.identity.init();
-        });
     }
 
-    componentDidMount() {
-        if (!this.identity) {
-            this.identity = netlifyIdentity;
-        }
+    handleAuth() {
+        const user = handleAuthentication();
 
-        this.identity.on('init', user => this.setUser(user));
-        this.identity.on('login', user => this.setUser(user));
-        this.identity.on('logout', () => this.setLoggedOut());
-
-        this.initIdentity();
-    }
-
-    componentWillUnmount() {
-        this.identity = null;
-    }
-
-    setUser(user = null) {
-        if (user && user.email) {
-            this.setState({
-                currentUser: user.user_metadata.full_name,
-                currentUserData: user,
-                isLoggedIn: true,
-            });
-
-            return user.user_metadata.full_name;
-        }
+        console.log('user', user);
 
         this.setState({
-            currentUser: null,
-            isLoggedIn: false,
-        });
-
-        return null;
-    }
-
-    setLoggedOut() {
-        this.setState({
-            currentUser: null,
-            isLoggedIn: false,
+            currentUserData: getProfile(),
+            isLoggedIn: true,
         });
     }
 
-    login() {
-        this.identity.open();
-    }
-
-    logout() {
-        this.identity.logout();
+    componentWillUpdate(newState) {
+        console.log(newState);
     }
 
     render() {

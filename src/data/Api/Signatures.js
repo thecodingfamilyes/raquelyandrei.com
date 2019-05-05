@@ -1,5 +1,5 @@
 export default () => {
-    const host = process.env.API_HOST || 'http://localhost';
+    const host = process.env.GATSBY_API_HOST || 'http://localhost';
     const url = `${host}/api/signatures`;
 
     return {
