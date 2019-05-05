@@ -10,42 +10,46 @@ import styled from 'styled-components';
 const TimelineContainer = styled.div.attrs({
     className: 'container mx-auto pt-4 flex flex-wrap relative mt-5',
 })`
-    &::before {
-        z-index: 1;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 49.7%;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #E2E2E2;
-    }
+    @media (min-width: 1024px) {
+        &::before {
+            z-index: 1;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 49.7%;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #E2E2E2;
+        }
 
-    &::after {
-        z-index: 1;
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        border-left: 2px solid #E2E2E2;
+        &::after {
+            z-index: 1;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            border-left: 2px solid #E2E2E2;
+        }
     }
 `;
 
 const TimelineEnd = styled.div.attrs({
     className: 'container mx-auto py-8 flex flex-wrap relative',
 })`
-    &::after {
-        z-index: 1;
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 49.7%;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #E2E2E2;
+    @media (min-width: 1024px) {
+        &::after {
+            z-index: 1;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 49.7%;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #E2E2E2;
+        }
     }
 `;
 
@@ -127,17 +131,17 @@ export default function TimelineContent() {
                         icon={
                             <SvgImage {...IglesiaIcon} />
                         }
-                        className="w-1/2 pr-12">
+                        className="w-full px-6 lg:px-0 lg:w-1/2 lg:pr-12">
                         <div className="item-content py-4">
-                            <div className="flex">
+                            <div className="sm:flex">
                                 <div className="flex-1">
                                     <p>
                                         {t('La ceremonia tendrá lugar en la Catedral Ortodoxa Rumana de Madrid, la cual se encuentra en la Calle Tubas, 9, 28054, Madrid. Pertenece al barrio de Carabanchel Alto, os recomendamos que asistáis, sí! Que asistáis!!! Porque ya sabemos qué pasa con ir a las iglesias/catedrales, que os saltáis ese paso y directamente nos vemos en el banquete.')}
                                     </p>
                                 </div>
 
-                                <div className="flex-1 flex justify-end">
-                                    <div className="absolute">
+                                <div className="py-4 sm:py-0 flex flex-1 justify-center sm:justify-end">
+                                    <div className="text-center lg:absolute">
                                         <Image {...FotoPadrinos.childImageSharp}/>
                                     </div>
                                 </div>
@@ -164,7 +168,7 @@ export default function TimelineContent() {
                         icon={
                             <SvgImage {...CopaEsperaIcon} />
                         }
-                        className="w-1/2 pl-12 right-0 ml-auto mt-104">
+                        className="w-full px-6 lg:px-0 lg:w-1/2 lg:pl-12 right-0 ml-auto lg:mt-104">
                         <div className="item-content py-4">
                             <div className="flex">
                                 <div className="flex-1">
@@ -190,7 +194,7 @@ export default function TimelineContent() {
                         icon={
                             <SvgImage {...CoctelIcon} />
                         }
-                        className="w-1/2 pr-12 -mt-40">
+                        className="w-full px-6 lg:px-0 lg:w-1/2 lg:pr-12 lg:-mt-16 xl:-mt-40">
                         <div className="item-content py-4">
                             <div className="flex">
                                 <div className="flex-1">
@@ -215,7 +219,7 @@ export default function TimelineContent() {
                         icon={
                             <SvgImage {...BanqueteIcon} />
                         }
-                        className="w-1/2 pl-12 right-0 ml-auto mt-40">
+                        className="w-full px-6 lg:px-0 lg:w-1/2 lg:pl-12 right-0 ml-auto lg:mt-40">
                         <div className="item-content py-4">
                             <div className="flex">
                                 <div className="flex-1">
@@ -239,7 +243,7 @@ export default function TimelineContent() {
                         icon={
                             <SvgImage {...FiestaIcon} />
                         }
-                        className="w-1/2 pr-12 -mt-56">
+                        className="w-full px-6 lg:px-0 lg:w-1/2 lg:pr-12 lg:-mt-40 xl:-mt-56">
                         <div className="item-content py-4">
                             <div className="flex">
                                 <div className="flex-1">
