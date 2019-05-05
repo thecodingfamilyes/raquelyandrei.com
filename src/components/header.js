@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import NavMenu from './NavMenu';
+import Link from './Link';
 import styled from 'styled-components';
 import LanguageSelector from './LanguageSelector';
 
@@ -25,15 +26,17 @@ function Header({ className, pageContext, isHome }) {
 			`}
             render={({ HeaderLogo }) => {
                 let content = <div className={className}>
-                    <LanguageSelector pageContext={pageContext} />
-                    <NavMenu />
+                    <div className="container mx-auto">
+                        <LanguageSelector pageContext={pageContext} />
+                        <NavMenu />
+                    </div>
                 </div>;
 
                 if(!isHome) {
                     content = <div className={`flex container mx-auto ${className}`}>
                         <div className="flex-auto">
                             <LogoContainer>
-                                <SvgImage {...HeaderLogo} className="py-5" />
+                                <Link to="/"><SvgImage {...HeaderLogo} className="py-5" /></Link>
                             </LogoContainer>
                         </div>
                         <div className="flex-auto">
