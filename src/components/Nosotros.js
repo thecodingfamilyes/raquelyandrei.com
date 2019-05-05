@@ -55,7 +55,7 @@ export default function Nosotros() {
             }) => {
                 return (
                     <div className="container mx-auto">
-                        <div className="single-cards lg:block flex">
+                        <div className="single-cards block lg:flex">
                             <PersonCard
                                 title="Raquel"
                                 photo={
@@ -94,7 +94,7 @@ export default function Nosotros() {
                                 </p>
                             </PersonCard>
 
-                            <div className="icon self-center sm:hidden lg:py-4 pt-20 pb-0 px-6 text-center">
+                            <div className="icon self-center hidden sm:block md:py-4 pt-20 pb-0 px-6 text-center">
                                 <Image {...HeartIcon.childImageSharp} />
                             </div>
 
