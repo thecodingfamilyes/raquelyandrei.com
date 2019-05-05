@@ -59,6 +59,9 @@ module.exports = {
                 800: '#975a16',
                 900: '#744210',
             },
+            golden: {
+                100: '#fdefd2',
+            },
             green: {
                 100: '#f0fff4',
                 200: '#c6f6d5',
