@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import 'moment/locale/es';
 import 'moment/locale/ro';
+import useInterval from '../hooks/useInterval';
 
 export default function TimeFromNow({ locale, time }) {
     moment.locale(locale);
@@ -9,7 +10,7 @@ export default function TimeFromNow({ locale, time }) {
 
     const [timefromNow, setTimeFromNow] = useState(baseTime.fromNow());
 
-    setInterval(() => {
+    useInterval(() => {
         setTimeFromNow(baseTime.fromNow());
     }, 60000);
 

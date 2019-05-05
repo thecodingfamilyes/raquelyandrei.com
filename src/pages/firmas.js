@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Login from '../components/Login';
 import App from '../firmas/Firmas';
 import MenuContext from '../context/PageContext';
 
@@ -10,9 +9,7 @@ function Firmas({ pageContext }) {
         <MenuContext.Provider value={'firmas'}>
             <Layout pageContext={pageContext}>
                 <SEO title="Libro de firmas" />
-                <div className="container text-center">
-                    <Login />
-
+                <div className="container mx-auto">
                     <App />
                 </div>
             </Layout>

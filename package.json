@@ -3,6 +3,7 @@
   "description": "Sitio de la boda de Raquel y Andrei",
   "version": "0.1.0",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "es6-promise": "^4.2.6",
     "gatsby": "^2.2.6",
@@ -23,6 +24,7 @@
     "moment": "^2.24.0",
     "netlify-identity-widget": "^1.5.2",
     "node-fetch": "^2.5.0",
+    "postcss-nested": "^4.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
