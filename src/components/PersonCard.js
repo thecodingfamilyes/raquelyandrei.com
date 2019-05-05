@@ -42,7 +42,7 @@ function PersonCard({ children, title, photo, className, isBig = false }) {
                     {title}
                 </H2>
 
-                <div className="py-5 px-10">{children}</div>
+                <div className="p-5 xl:px-10">{children}</div>
             </PersonContainer>
         </div>
     );
