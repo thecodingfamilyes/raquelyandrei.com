@@ -14,19 +14,25 @@ export default function Item({ name, message, gravatar, created_at }) {
                 }
 
                 return (
-                    <div className="flex text-left my-5">
+                    <div className="flex text-left my-5 animated fadeIn">
                         <div className="mr-2">
                             <img
                                 src={gravatar}
                                 className="rounded-full border border-gray-500 bg-white "
                             />
                         </div>
+
+                        <div className="triangle-left mt-3 text-golden-100" />
+
                         <div className="flex-1">
-                            <div className="mb-1 p-3 border-solid border border-gray-500">
-                                <Markdown source={message} />
+                            <div className="mb-1 px-8 py-4 bg-golden-100 rounded-lg">
+                                <Markdown
+                                    source={message}
+                                    className="md-content"
+                                />
                             </div>
                             <div className="flex text-gray-700">
-                                <div className="mr-2">{name}</div>
+                                <div className="mr-1">{name}</div>
                                 <div>
                                     <TimeFromNow
                                         locale={lang}
