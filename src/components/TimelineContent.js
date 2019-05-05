@@ -8,7 +8,7 @@ import SvgImage from './SvgImage';
 import styled from 'styled-components';
 
 const TimelineContainer = styled.div.attrs({
-    className: 'container mx-auto pt-4 flex flex-wrap relative',
+    className: 'container mx-auto pt-4 flex flex-wrap relative mt-5',
 })`
     &::before {
         z-index: 1;
@@ -190,7 +190,7 @@ export default function TimelineContent() {
                         icon={
                             <SvgImage {...CoctelIcon} />
                         }
-                        className="w-1/2 pr-12 -mt-48">
+                        className="w-1/2 pr-12 -mt-40">
                         <div className="item-content py-4">
                             <div className="flex">
                                 <div className="flex-1">

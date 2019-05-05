@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ItemContainer = styled.div.attrs({
     className: 'bg-white',
 })`
-    margin-top: 5rem;
+    margin-top: 2rem;
 `;
 
 function TimelineItem({ children, title, icon, rightSide, className, time }) {
