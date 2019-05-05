@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import LanguageSelector from './LanguageSelector';
-//import NavMenu from './NavMenu';
+import Footer from './Footer';
 
 import Header from './header';
 
@@ -13,6 +12,8 @@ function Layout({ children, pageContext }) {
             <Header pageContext={pageContext} />
 
             {children}
+
+            <Footer/>
         </Base>
     );
 }
