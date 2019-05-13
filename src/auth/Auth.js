@@ -1,84 +1,68 @@
-import netlifyIdentity from 'netlify-identity-widget';
 import React, { Component, createContext } from 'react';
-import once from 'lodash.once';
+import {
+    login,
+    logout,
+    handleAuthentication,
+    isAuthenticated,
+    silentAuth,
+    user,
+} from './auth0';
 
 const AuthContext = createContext({
-    isLoggedIn: false,
+    isLoggedIn: isAuthenticated(),
     currentUser: null,
-    login: () => {},
+    currentUserData: null,
+    login,
+    logout: () => {},
+    handleAuth: () => {
+        handleAuthentication();
+    },
 });
 
 class Auth extends Component {
     constructor(props) {
         super(props);
 
-        this.identity = null;
-
         this.state = {
-            isLoggedIn: false,
+            isLoggedIn: isAuthenticated(),
             currentUser: null,
-            currentUserData: {},
-            login: () => {
-                this.login();
-            },
+            currentUserData: null,
+            login,
             logout: () => {
-                this.logout();
+                this.setState({
+                    isLoggedIn: false,
+                    currentUser: null,
+                    currentUserData: {},
+                });
+
+                logout();
+            },
+            handleAuth: () => {
+                this.handleAuth();
             },
         };
-
-        this.initIdentity = once(() => {
-            this.identity.init();
-        });
     }
 
     componentDidMount() {
-        if (!this.identity) {
-            this.identity = netlifyIdentity;
-        }
-
-        this.identity.on('init', user => this.setUser(user));
-        this.identity.on('login', user => this.setUser(user));
-        this.identity.on('logout', () => this.setLoggedOut());
-
-        this.initIdentity();
-    }
-
-    componentWillUnmount() {
-        this.identity = null;
-    }
-
-    setUser(user = null) {
-        if (user && user.email) {
-            this.setState({
-                currentUser: user.user_metadata.full_name,
-                currentUserData: user,
-                isLoggedIn: true,
-            });
-
-            return user.user_metadata.full_name;
-        }
-
-        this.setState({
-            currentUser: null,
-            isLoggedIn: false,
+        user.subscribe({
+            next: userData => {
+                this.setUser(userData);
+            },
         });
 
-        return null;
+        silentAuth(() => {});
     }
 
-    setLoggedOut() {
+    setUser(data) {
         this.setState({
-            currentUser: null,
-            isLoggedIn: false,
+            currentUserData: data,
+            currentUser: data.name,
+            isLoggedIn: true,
         });
     }
 
-    login() {
-        this.identity.open();
-    }
-
-    logout() {
-        this.identity.logout();
+    handleAuth() {
+        handleAuthentication();
     }
 
     render() {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AuthContext } from '../auth/Auth';
 import { useTranslation } from 'react-i18next';
 import Button from '../components/styled/Button';
+import { AvatarImg } from '../components/styled/Avatar';
 import IdentityWarning from '../components/IdentityWarning';
 import SimpleMDE from 'react-simplemde-editor';
 import 'easymde/dist/easymde.min.css';
@@ -15,7 +16,7 @@ export default function Form({ onSubmit = () => {} }) {
     return (
         <AuthContext.Consumer>
             {({ isLoggedIn, currentUserData, currentUser, logout }) => {
-                if (!isLoggedIn) {
+                if (!isLoggedIn || !currentUserData) {
                     return <IdentityWarning />;
                 }
 
@@ -31,25 +32,39 @@ export default function Form({ onSubmit = () => {} }) {
                                 status: false,
                             }}
                         />
-                        <div className="flex my-2">
-                            <Button
-                                disabled={buttonEnabled}
-                                className="mr-4"
-                                onClick={() => {
-                                    onSubmit({
-                                        user: currentUserData,
-                                        name: currentUser,
-                                        email: currentUserData.email,
-                                        msg: message,
-                                    });
-                                }}
-                            >
-                                {t('Publicar firma')}
-                            </Button>
+                        <div className="flex justify-between my-2">
+                            <div className="flex items-center content-end">
+                                <AvatarImg
+                                    className="mr-2"
+                                    src={currentUserData.picture}
+                                    alt={currentUserData.name}
+                                />
 
-                            <button onClick={logout} className="text-gray-600">
-                                {t('Cancelar')}
-                            </button>
+                                <div className="">{currentUserData.name}</div>
+                            </div>
+                            <div className="flex">
+                                <button
+                                    onClick={logout}
+                                    className="text-gray-600 mr-4"
+                                >
+                                    {t('Cancelar')}
+                                </button>
+                                <Button
+                                    disabled={buttonEnabled}
+                                    onClick={() => {
+                                        onSubmit({
+                                            user: currentUserData,
+                                            name: currentUser,
+                                            email: currentUserData.email,
+                                            msg: message,
+                                            image:
+                                                currentUserData.picture || null,
+                                        });
+                                    }}
+                                >
+                                    {t('Publicar firma')}
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 );
