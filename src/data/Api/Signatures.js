@@ -4,11 +4,11 @@ export default () => {
 
     return {
         fetchSignatures: url,
-        addSignature: ({ name, email, msg }) => ({
+        addSignature: ({ name, email, msg, image }) => ({
             addedSignature: {
                 url: url,
                 method: 'POST',
-                body: JSON.stringify({ name, email, message: msg }),
+                body: JSON.stringify({ name, email, message: msg, image }),
             },
         }),
     };

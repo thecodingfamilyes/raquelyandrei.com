@@ -6,7 +6,12 @@ require('isomorphic-fetch');
 
 import React from 'react';
 import SessionCheck from './src/auth/SessionCheck';
+import { Auth } from './src/auth/Auth';
 
 export const wrapRootElement = ({ element }) => {
-    return <SessionCheck>{element}</SessionCheck>;
+    return (
+        <SessionCheck>
+            <Auth>{element}</Auth>
+        </SessionCheck>
+    );
 };

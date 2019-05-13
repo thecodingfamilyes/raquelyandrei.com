@@ -7,23 +7,21 @@ const Callback = () => {
 
     if (authenticated) {
         return (
-            <Auth>
-                <AuthContext.Consumer>
-                    {() => {
-                        return (
-                            <>
-                                <p
-                                    ref={() => {
-                                        navigate('/firmas');
-                                    }}
-                                >
-                                    loading...
-                                </p>
-                            </>
-                        );
-                    }}
-                </AuthContext.Consumer>
-            </Auth>
+            <AuthContext.Consumer>
+                {() => {
+                    return (
+                        <>
+                            <p
+                                ref={() => {
+                                    navigate('/firmas');
+                                }}
+                            >
+                                loading...
+                            </p>
+                        </>
+                    );
+                }}
+            </AuthContext.Consumer>
         );
     }
 

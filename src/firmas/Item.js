@@ -2,6 +2,14 @@ import React from 'react';
 import { I18nContext } from '../i18n/I18nContext';
 import TimeFromNow from '../components/TimeFromNow';
 import Markdown from 'react-markdown';
+import styled from 'styled-components';
+
+const MiniAvatar = styled.img.attrs({
+    className: 'rounded-full border border-gray-500 bg-white',
+})`
+    max-width: 40px;
+    max-height: 40px;
+`;
 
 export default function Item({ name, message, gravatar, created_at }) {
     return (
@@ -16,10 +24,7 @@ export default function Item({ name, message, gravatar, created_at }) {
                 return (
                     <div className="flex text-left my-5 animated fadeIn">
                         <div className="mr-2">
-                            <img
-                                src={gravatar}
-                                className="rounded-full border border-gray-500 bg-white "
-                            />
+                            <MiniAvatar src={gravatar} />
                         </div>
 
                         <div className="triangle-left mt-3 text-golden-100" />

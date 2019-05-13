@@ -9,31 +9,29 @@ import { I18nContext } from '../i18n/I18nContext';
 function Base({ children, pageContext: { locale, availableLocales } }) {
     return (
         <I18nContext.Provider value={{ locale, availableLocales }}>
-            <Auth>
-                <StaticQuery
-                    query={graphql`
-                        query SiteTitleQuery {
-                            site {
-                                siteMetadata {
-                                    title
-                                }
+            <StaticQuery
+                query={graphql`
+                    query SiteTitleQuery {
+                        site {
+                            siteMetadata {
+                                title
                             }
                         }
-                    `}
-                    render={() => (
-                        <>
-                            <Helmet
-                                bodyAttributes={{
-                                    class:
-                                        'font-sans antialiased text-grey-300 bg-neutral-100',
-                                }}
-                            />
+                    }
+                `}
+                render={() => (
+                    <>
+                        <Helmet
+                            bodyAttributes={{
+                                class:
+                                    'font-sans antialiased text-grey-300 bg-neutral-100',
+                            }}
+                        />
 
-                            {children}
-                        </>
-                    )}
-                />
-            </Auth>
+                        {children}
+                    </>
+                )}
+            />
         </I18nContext.Provider>
     );
 }
