@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import { Auth, AuthContext } from '../auth/Auth';
+import { navigate } from 'gatsby';
 
-const Callback = ({ pageContext }) => {
+const Callback = () => {
     const [authenticated, setAuthenticated] = useState(false);
 
     if (authenticated) {
         return (
             <Auth>
                 <AuthContext.Consumer>
-                    {({ currentUserData }) => {
+                    {() => {
                         return (
-                            <pre>
-                                {JSON.stringify(currentUserData, null, 4)}
-                            </pre>
+                            <>
+                                <p
+                                    ref={() => {
+                                        navigate('/firmas');
+                                    }}
+                                >
+                                    loading...
+                                </p>
+                            </>
                         );
                     }}
                 </AuthContext.Consumer>
@@ -27,8 +34,8 @@ const Callback = ({ pageContext }) => {
                     return (
                         <p
                             ref={() => {
-                                setAuthenticated(true);
                                 handleAuth();
+                                setAuthenticated(true);
                             }}
                         >
                             Loading...

@@ -1,15 +1,17 @@
 import React, { Component, createContext } from 'react';
 import {
     login,
+    logout,
     handleAuthentication,
-    getProfile,
     isAuthenticated,
+    silentAuth,
+    user,
 } from './auth0';
 
 const AuthContext = createContext({
     isLoggedIn: isAuthenticated(),
     currentUser: null,
-    currentUserData: getProfile(),
+    currentUserData: null,
     login,
     logout: () => {},
     handleAuth: () => {
@@ -24,7 +26,7 @@ class Auth extends Component {
         this.state = {
             isLoggedIn: isAuthenticated(),
             currentUser: null,
-            currentUserData: getProfile(),
+            currentUserData: null,
             login,
             logout: () => {
                 this.setState({
@@ -33,7 +35,7 @@ class Auth extends Component {
                     currentUserData: {},
                 });
 
-                localStorage.setItem('isLoggedIn', false);
+                logout();
             },
             handleAuth: () => {
                 this.handleAuth();
@@ -41,19 +43,26 @@ class Auth extends Component {
         };
     }
 
-    handleAuth() {
-        const user = handleAuthentication();
+    componentDidMount() {
+        user.subscribe({
+            next: userData => {
+                this.setUser(userData);
+            },
+        });
 
-        console.log('user', user);
+        silentAuth(() => {});
+    }
 
+    setUser(data) {
         this.setState({
-            currentUserData: getProfile(),
+            currentUserData: data,
+            currentUser: data.name,
             isLoggedIn: true,
         });
     }
 
-    componentWillUpdate(newState) {
-        console.log(newState);
+    handleAuth() {
+        handleAuthentication();
     }
 
     render() {

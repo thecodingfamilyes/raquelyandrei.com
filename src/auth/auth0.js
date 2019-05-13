@@ -1,4 +1,5 @@
 import auth0 from 'auth0-js';
+import { ReplaySubject } from 'rxjs';
 import { navigate } from 'gatsby';
 
 const isBrowser = typeof window !== 'undefined';
@@ -18,7 +19,7 @@ const tokens = {
     expiresAt: false,
 };
 
-let user = {};
+let user = new ReplaySubject(1);
 
 export const isAuthenticated = () => {
     if (!isBrowser) {
@@ -36,9 +37,17 @@ export const login = () => {
     auth.authorize();
 };
 
+export const logout = () => {
+    localStorage.setItem('isLoggedIn', false);
+    localStorage.setItem('userData', null);
+
+    auth.logout();
+    user.next({});
+};
+
 const setSession = (cb = () => {}) => (err, authResult) => {
     if (err) {
-        //navigate('/firmas');
+        navigate('/firmas');
         cb();
         return;
     }
@@ -48,8 +57,12 @@ const setSession = (cb = () => {}) => (err, authResult) => {
         tokens.accessToken = authResult.accessToken;
         tokens.idToken = authResult.idToken;
         tokens.expiresAt = expiresAt;
-        user = authResult.idTokenPayload;
+
+        user.next(Object.assign({}, authResult.idTokenPayload));
+
         localStorage.setItem('isLoggedIn', true);
+        localStorage.setItem('userData', authResult);
+
         //navigate('/firmas');
         cb();
     }
@@ -61,10 +74,15 @@ export const handleAuthentication = () => {
     }
 
     auth.parseHash(setSession());
+};
 
-    return user;
+export const silentAuth = callback => {
+    if (!isAuthenticated()) return callback();
+    auth.checkSession({}, setSession(callback));
 };
 
 export const getProfile = () => {
     return user;
 };
+
+export { user };

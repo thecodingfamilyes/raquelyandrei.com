@@ -51,6 +51,8 @@ export default function Form({ onSubmit = () => {} }) {
                                 {t('Cancelar')}
                             </button>
                         </div>
+
+                        <pre>{JSON.stringify(currentUserData, null, 4)}</pre>
                     </div>
                 );
             }}
