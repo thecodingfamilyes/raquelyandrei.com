@@ -43,7 +43,7 @@ function TimelineItem({ children, title, icon, rightSide, className, time }) {
                     <div className="header-bottom bg-red-700 h-4"></div>
                 </div>
 
-                <div className="py-5 md:px-5 lg:px-10">{children}</div>
+                <div className="py-5 sm:px-2 px-5 lg:px-10">{children}</div>
             </ItemContainer>
         </div>
     );
