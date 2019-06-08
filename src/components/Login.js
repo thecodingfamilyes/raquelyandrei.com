@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Button from './styled/Button';
 import { AuthContext } from '../auth/Auth';
 
-function Login() {
+function Login({ text }) {
     const { t } = useTranslation();
 
     return (
@@ -12,17 +12,22 @@ function Login() {
                 if (isLoggedIn) {
                     return (
                         <>
-                            estoy logged in, soy {currentUser}!!
-                            <Button onClick={() => logout()}>
-                                {t('Salir')}
-                            </Button>
+                            {t('Te has identificado como')}
+                            {` ${currentUser}`}{' '}
+                            <a
+                                href="#"
+                                className="text-red-700"
+                                onClick={() => logout()}
+                            >
+                                {t('Haz click aquí para salir')}
+                            </a>
                         </>
                     );
                 }
 
                 return (
                     <Button onClick={() => login()}>
-                        {t('Identificarme')}
+                        {text || t('Identificarme')}
                     </Button>
                 );
             }}

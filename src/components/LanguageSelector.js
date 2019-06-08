@@ -7,7 +7,7 @@ export default function LanguageSelector({ pageContext: { originalPath } }) {
         <I18nContext.Consumer>
             {({ locale, availableLocales }) => (
                 <>
-                    <ul className="flex items-end content-end justify-end px-5 pt-5">
+                    <ul className="flex items-end content-end justify-end pl-5 pt-5">
                         {availableLocales.map(loc => {
                             let className = 'text-grey-600 hover:text-grey-500';
 

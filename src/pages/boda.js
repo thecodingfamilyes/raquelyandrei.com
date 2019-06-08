@@ -1,16 +1,16 @@
 import React from 'react';
 import Layout from '../components/layout';
-import NosotrosContent from '../components/Nosotros';
+import TimelineContent from '../components/TimelineContent';
 import MenuContext from '../context/PageContext';
 
-function Nosotros({ pageContext }) {
+function Boda({ pageContext }) {
     return (
-        <MenuContext.Provider value={'nosotros'}>
+        <MenuContext.Provider value={'boda'}>
             <Layout pageContext={pageContext}>
-                <NosotrosContent />
+                <TimelineContent />
             </Layout>
         </MenuContext.Provider>
     );
 }
 
-export default Nosotros;
+export default Boda;

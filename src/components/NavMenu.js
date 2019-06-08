@@ -22,18 +22,13 @@ export default function NavMenu() {
             url: '/firmas',
             key: 'firmas',
         },
-        {
-            title: t('Pregúntanos'),
-            url: '/preguntas',
-            key: 'preguntas',
-        },
     ];
 
     return (
         <nav>
             <MenuContext.Consumer>
                 {curMenu => (
-                    <ul className="uppercase flex justify-end p-5">
+                    <ul className="uppercase flex justify-end p-5 pr-0">
                         {sections.map(section => {
                             let activeClass = null;
 

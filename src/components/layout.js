@@ -1,50 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import LanguageSelector from './LanguageSelector';
-import NavMenu from './NavMenu';
-import Helmet from 'react-helmet';
-import { Auth } from '../auth/Auth';
-import withI18next from '../components/withI18next';
-import { I18nContext } from '../i18n/I18nContext';
+import Footer from './Footer';
 
-function Layout({
-    children,
-    pageContext: { locale, availableLocales },
-    pageContext,
-}) {
+import Header from './header';
+
+import Base from './Base';
+
+function Layout({ children, pageContext }) {
     return (
-        <I18nContext.Provider value={{ locale, availableLocales }}>
-            <Auth>
-                <StaticQuery
-                    query={graphql`
-                        query SiteTitleQuery {
-                            site {
-                                siteMetadata {
-                                    title
-                                }
-                            }
-                        }
-                    `}
-                    render={() => (
-                        <>
-                            <Helmet
-                                bodyAttributes={{
-                                    class:
-                                        'font-sans antialiased text-grey-300 bg-neutral-100',
-                                }}
-                            />
+        <Base pageContext={pageContext}>
+            <Header pageContext={pageContext} className="px-6" />
 
-                            <LanguageSelector pageContext={pageContext} />
+            {children}
 
-                            <NavMenu />
-
-                            {children}
-                        </>
-                    )}
-                />
-            </Auth>
-        </I18nContext.Provider>
+            <Footer/>
+        </Base>
     );
 }
 
@@ -53,4 +23,4 @@ Layout.propTypes = {
     pageContext: PropTypes.object.isRequired,
 };
 
-export default withI18next()(Layout);
+export default Layout;

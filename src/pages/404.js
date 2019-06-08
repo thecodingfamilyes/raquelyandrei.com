@@ -4,9 +4,9 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import abductionIllustration from '../images/abduction-illustration.svg';
 
-function NotFoundPage() {
+function NotFoundPage({ pageContext }) {
     return (
-        <Layout>
+        <Layout pageContext={pageContext}>
             <SEO title="404: Not found" />
             <div>
                 <img
@@ -15,7 +15,8 @@ function NotFoundPage() {
                     alt="Ghost getting abducted by aliens"
                 />
                 <h2 className="bg-yellow inline-block my-8 p-3">
-          Looks like this page is a ghost that got abducted by aliens...
+                    Looks like this page is a ghost that got abducted by
+                    aliens...
                 </h2>
             </div>
         </Layout>

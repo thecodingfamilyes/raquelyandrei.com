@@ -1,16 +1,15 @@
 import React from 'react';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from '../components/HomeLayout';
 
 import Countdown from '../components/Countdown';
 import { StaticQuery, graphql } from 'gatsby';
 import SvgImage from '../components/SvgImage';
 
+import Header from '../components/header';
+
 function IndexPage({ pageContext }) {
     return (
         <Layout pageContext={pageContext}>
-            <SEO title="Portada" />
-
             <StaticQuery
                 query={graphql`
                     query {
@@ -29,16 +28,21 @@ function IndexPage({ pageContext }) {
                         ) {
                             ...ImageWithSVG
                         }
+                        site {
+                            siteMetadata {
+                                title
+                            }
+                        }
                     }
                 `}
-                render={({ fullBg }) => (
-                    <div className="text-center container m-auto">
-                        <SvgImage {...fullBg} className="w-screen" />
+                render={({ fullBg, site }) => (
+                    <div className="text-center">
+                        <Header isHome className="absolute top-0 w-full" siteTitle={site.siteMetadata.title} pageContext={pageContext} />
+                        <SvgImage {...fullBg} className="w-screen h-screen pt-8" />
+                        <Countdown />
                     </div>
                 )}
             />
-
-            <Countdown />
         </Layout>
     );
 }
