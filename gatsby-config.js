@@ -11,13 +11,13 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'gatsby-starter-tailwind',
-                short_name: 'starter',
+                name: 'Raquel y Andrei',
+                short_name: 'raquelyandrei',
                 start_url: '/',
                 background_color: '#ffffff',
-                theme_color: '#4dc0b5',
+                theme_color: '#ba2525',
                 display: 'minimal-ui',
-                icon: 'src/images/tailwind-icon.png',
+                icon: 'src/images/subpages-logo.svg',
             },
         },
         'gatsby-plugin-postcss',
