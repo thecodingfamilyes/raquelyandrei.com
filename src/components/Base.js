@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Auth } from '../auth/Auth';
 import withI18next from '../components/withI18next';
 import { I18nContext } from '../i18n/I18nContext';
 

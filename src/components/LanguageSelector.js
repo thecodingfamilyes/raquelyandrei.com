@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { I18nContext } from '../i18n/I18nContext';
-import SEO from './seo';
 
 export default function LanguageSelector({ pageContext: { originalPath } }) {
     return (
         <I18nContext.Consumer>
             {({ locale, availableLocales }) => (
                 <>
-                    <SEO lang={locale} />
                     <ul className="flex items-end content-end justify-end pl-5 pt-5">
                         {availableLocales.map(loc => {
                             let className = 'text-grey-600 hover:text-grey-500';

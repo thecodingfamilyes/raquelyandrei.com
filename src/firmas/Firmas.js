@@ -5,6 +5,8 @@ import Form from './Form';
 import { connect } from 'react-refetch';
 import List from './List';
 import SignatureApi from '../data/Api/Signatures';
+import SEO from '../components/seo';
+import { I18nContext } from '../i18n/I18nContext';
 
 import { polyfill } from 'es6-promise';
 import 'isomorphic-fetch';
@@ -39,6 +41,11 @@ function Firmas({ fetchSignatures, addSignature, addedSignature }) {
 
     return (
         <div>
+            <I18nContext.Consumer>
+                {({ locale }) => (
+                    <SEO title={t('Libro de firmas')} lang={locale} />
+                )}
+            </I18nContext.Consumer>
             <H1 className="font-cursive text-3xl">{t('Libro de firmas')}</H1>
             {addform}
             {content}
