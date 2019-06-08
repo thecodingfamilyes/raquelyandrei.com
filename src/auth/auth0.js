@@ -41,7 +41,9 @@ export const logout = () => {
     localStorage.setItem('isLoggedIn', false);
     localStorage.setItem('userData', null);
 
-    auth.logout();
+    auth.logout({
+        returnTo: window.location.origin,
+    });
     user.next({});
 };
 

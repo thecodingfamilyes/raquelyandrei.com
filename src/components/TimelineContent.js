@@ -143,7 +143,7 @@ export default function TimelineContent() {
                 }) => (
                     <TimelineContainer>
                         <TimelineItem
-                            title="Ceremonia"
+                            title={t('Ceremonia')}
                             time="11:30"
                             icon={<SvgImage {...IglesiaIcon} />}
                             className="w-full px-6 lg:px-0 lg:w-1/2 lg:pr-12"
@@ -186,7 +186,7 @@ export default function TimelineContent() {
                         </TimelineItem>
 
                         <TimelineItem
-                            title="Copa de espera"
+                            title={t('Copa de espera')}
                             time="13:30"
                             rightSide
                             icon={<SvgImage {...CopaEsperaIcon} />}
@@ -227,7 +227,7 @@ export default function TimelineContent() {
                         </TimelineItem>
 
                         <TimelineItem
-                            title="Cóctel"
+                            title={t('Cóctel')}
                             time="14:00"
                             icon={<SvgImage {...CoctelIcon} />}
                             className="w-full px-6 lg:px-0 lg:w-1/2 lg:pr-12 lg:-mt-16 xl:-mt-40"
@@ -254,7 +254,7 @@ export default function TimelineContent() {
                         </TimelineItem>
 
                         <TimelineItem
-                            title="Banquete"
+                            title={t('Banquete')}
                             time="15:00"
                             rightSide
                             icon={<SvgImage {...BanqueteIcon} />}
@@ -282,7 +282,7 @@ export default function TimelineContent() {
                         </TimelineItem>
 
                         <TimelineItem
-                            title="Barra libre + recena"
+                            title={t('Barra libre + recena')}
                             time="19:00"
                             icon={<SvgImage {...FiestaIcon} />}
                             className="w-full px-6 lg:px-0 lg:w-1/2 lg:pr-12 lg:-mt-40 xl:-mt-56"
