@@ -33,7 +33,7 @@ function Header({ className, pageContext, isHome }) {
                 </div>;
 
                 if(!isHome) {
-                    content = <div className={`flex container mx-auto ${className}`}>
+                    content = <div className={`sm:flex container mx-auto ${className}`}>
                         <div className="flex-auto">
                             <LogoContainer>
                                 <Link to="/"><SvgImage {...HeaderLogo} className="py-5" /></Link>

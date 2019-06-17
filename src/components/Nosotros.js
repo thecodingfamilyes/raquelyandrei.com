@@ -149,17 +149,17 @@ export default function Nosotros() {
                                     </H2>
                                     <p>
                                         {t(
-                                            'allá por el 2006, que fue cuando nos conocimos, bastó una mirada, mutua, y ya... ya la liamos, los dos sentimos algo tan especial que no se puede describir (we swear!!!).'
+                                            'allá por el 2006. Una mirada bastó, los dos sentimos algo tan especial que no se puede describir (we swear!!!).'
                                         )}
                                     </p>
                                     <p>
                                         {t(
-                                            'Cierto es que Reixel (así la llaman sus amigos más cercanos) se hizo la  por un año, por que no fue hasta el año siguiente que se subió al avión del viaje de su vida, el cual despegó una tarde de marzo de 2007.'
+                                            'Hace ya 12 años que emprendimos el viaje de nuestras vidas , un billete de embarque llamado destino, hizo que nos encontráramos y que desde entonces no podamos estar el uno sin el otro.'
                                         )}
                                     </p>
                                     <p>
                                         {t(
-                                            'Allí se encontraba su piloto, Andrei, al mando del vuelo más importante de su vida, deseando despegar y quedarse por siempre en !pinteresanteunto de NO retorno", es decir, no abortar el vuelo.'
+                                            'Y ahora... ¡Hemos decidido embarcarnos en un nuevo viaje! Dentro de nuestra maleta hemos guardado un gran hueco para que podáis compartir con nosotros esta gran aventura.'
                                         )}
                                     </p>
                                 </div>
@@ -170,7 +170,7 @@ export default function Nosotros() {
                                     </H2>
                                     <p>
                                         {t(
-                                            'los dos están en las nubes, colgados el uno del otro '
+                                            'los dos estamos en las nubes, colgados el uno del otro '
                                         )}
                                         <strong>
                                             {t('LOVE IS IN THE AIR!!!')}
@@ -178,18 +178,86 @@ export default function Nosotros() {
                                     </p>
                                     <p>
                                         {t(
-                                            'En este viaje nos ha acompañado la mejor tripulación con la que se puede contar: VOSOTROS, por que habéis estado en los pasajes de nuestras vidas, familia, amigos, infancia, trabajo... a veces el billete ha sido bussines, otras no (para lo bueno y para lo malo, pero siempre ahí), todos y cada uno de vosotros tenéis y tendréis vuestro asiento en este viaje junto a nosotros (en busssines, of course) en nuestro Airbus A380-800 (el más grande del mundo) por siempre.'
+                                            'En este viaje nos ha acompañado la mejor tripulación con la que se puede contar: VOSOTROS, porque habéis estado en los pasajes de nuestras vidas, familia, amigos, infancia, trabajo... a veces el billete ha sido bussines, otras no (para lo bueno y para lo malo, pero siempre ahí), todos y cada uno de vosotros tenéis y tendréis vuestro asiento en este viaje junto a nosotros.'
                                         )}
                                     </p>
                                     <p>
                                         {t(
-                                            'Ahora hablamos de otro viaje, el vuelo más importante de nuestra vida, porque...'
+                                            'Queremos presentaros el vuelo más importante de nuestra vida...'
                                         )}
                                         <strong>{t(' NOS CASAMOS')}</strong>
                                         {t(
-                                            '!!!! Siiiii!!!! Así que, abróchense los cinturones, porque en nombre de la tripulación;  Raquel y Andrei, les deseamos un feliz viaje y una experiencia única, por compartir este momento tan especial con nosotros, el cual nos llena de honor poder contar con vuestra presencia (Check In necesario).'
+                                            '!!!! Siiiii!!!! Así que, haced ya el Check In, y abrocharos los cinturones que despegamos!!! Será un gran honor poder contar con vuestra presencia.'
                                         )}
                                     </p>
+
+                                    <div className="bg-gray-200 p-8 text-sm text-left border-l-4 border-blue-900 mt-6">
+                                        <p className="mb-4">
+                                            {t(
+                                                'Hay momentos en la vida que son especiales por si solos. Compartirlos con las personas que queremos los convierte en momentos inolvidables.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Ahora no sentiréis que la lluvia os moja porque cada uno de vosotros será el amparo del otro.'
+                                            )}
+                                        </p>
+                                        
+                                        <p className="italic">
+                                            {t(
+                                                'Ahora no sentiréis el frío porque cada uno de vosotros será el abrigo del otro.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Ahora vosotros sois dos personas pero a partir de ahora seréis una sola.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Id ahora a vuestro hogar para comenzar los días de vuestra vida juntos. Y quizás sus días sean largos y buenos sobre la tierra.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Trataros a vosotros mismos y al otro con respeto y recordad a menudo qué os ha unido.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Dad la mayor prioridad a la ternura, gentileza y bondad que vuestra unión merece.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Cuando la frustración, la dificultad y el temor asalten la relacion, como aquello que amenaza todo tarde o temprano, recordad centraros en lo positivo, no solamente en la parte que se ve equivocada.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'En este camino, podéis cabalgar lejos de las tormentas cuando las nubes oculten la cara del sol en vuestras vidas, recordad que aunque lo perdáis de vista por un instante, el sol aún sigue ahí.'
+                                            )}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t(
+                                                'Y si cada uno de vosotros se responsabiliza por vuestra calidad de vida juntos, seréis bendecidos con la abundancia y la felicidad.'
+                                            )}
+                                        </p>
+
+                                        <p className="text-right font-bold mt-4">
+                                            {t(
+                                                'Bendición Nativo americana (Apache) del matrimonio'
+                                            )}
+                                        </p> 
+                                    </div>
                                 </div>
                             </PersonCard>
                         </div>

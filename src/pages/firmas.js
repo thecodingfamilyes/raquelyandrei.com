@@ -7,7 +7,7 @@ function Firmas({ pageContext }) {
     return (
         <MenuContext.Provider value={'firmas'}>
             <Layout pageContext={pageContext}>
-                <div className="container mx-auto">
+                <div className="container mx-auto px-8">
                     <App />
                 </div>
             </Layout>

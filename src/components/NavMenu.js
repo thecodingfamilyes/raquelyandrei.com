@@ -28,7 +28,7 @@ export default function NavMenu() {
         <nav>
             <MenuContext.Consumer>
                 {curMenu => (
-                    <ul className="uppercase flex justify-end p-5 pr-0">
+                    <ul className="uppercase flex items-center justify-between sm:justify-end p-5 pr-0 text-xs sm:text-base">
                         {sections.map(section => {
                             let activeClass = null;
 
