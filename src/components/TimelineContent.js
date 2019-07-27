@@ -197,8 +197,8 @@ export default function TimelineContent() {
                                     <div className="flex-1">
                                         <p>
                                             {t(
-                                                'Aquí es donde nos esperaréis una vez finalizada la ceremonia, será en la finca '
-                                            )}
+                                                'Aquí es donde nos esperaréis una vez finalizada la ceremonia, será en la finca'
+                                            )}{' '}
                                             <span>
                                                 <a
                                                     href="https://www.inbodas.com/fincas-para-bodas-en-madrid-sur/finca-los-cotos/"
@@ -208,7 +208,7 @@ export default function TimelineContent() {
                                                 >
                                                     "Los Cotos"
                                                 </a>
-                                            </span>
+                                            </span>{' '}
                                             {t(
                                                 ', no os preocupéis, es muy grande pero en todo momento contaréis con organizadores que os mostrarán cada parte de la misma si así lo necesitáis.'
                                             )}

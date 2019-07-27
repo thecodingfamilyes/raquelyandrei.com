@@ -7,17 +7,20 @@ export const options = {
     ns: [defaultNamespace],
     defaultNS: defaultNamespace,
 
+    keySeparator: '///',
+    nsSeparator: ':::',
+
     debug: false,
 
     interpolation: {
-        escapeValue: false // not needed for react!!
+        escapeValue: false, // not needed for react!!
     },
 
     react: {
-        wait: false
+        wait: false,
     },
 
-    initImmediate: false // Important for SSR to work
+    initImmediate: false, // Important for SSR to work
 };
 
 export default () => {

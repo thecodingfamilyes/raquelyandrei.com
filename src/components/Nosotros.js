@@ -11,6 +11,13 @@ import SEO from './seo';
 export default function Nosotros() {
     const { t } = useTranslation();
 
+    console.log(
+        t([
+            'verle y ya',
+            'Y allí estaba ella... detrás de la barra del restaurante, unos metros más abajo de donde yo trabajaba por aquel entonces (2006). Cada vez que Raquel recuerda ese momento, te va a decir lo mismo que a todo el que se lo cuenta; \\"fue verle y ya!!\\"',
+        ])
+    );
+
     return (
         <>
             <I18nContext.Consumer>
@@ -76,33 +83,38 @@ export default function Nosotros() {
                                     className="flex-1 flex"
                                 >
                                     <p>
-                                        {t(
-                                            'Y allí estaba ella... detrás de la barra del restaurante, unos metros más abajo de donde yo trabajaba por aquel entonces (2006). Cada vez que Raquel recuerda ese momento, te va a decir lo mismo que a todo el que se lo cuenta; "fue verle y ya!!"'
-                                        )}
+                                        {t([
+                                            'verle y ya',
+                                            'Y allí estaba ella... detrás de la barra del restaurante, unos metros más abajo de donde yo trabajaba por aquel entonces (2006). Cada vez que Raquel recuerda ese momento, te va a decir lo mismo que a todo el que se lo cuenta; "fue verle y ya!!"',
+                                        ])}
                                     </p>
 
                                     <p>
-                                        {t(
-                                            'Unos cuantos cafés a la salida, cenas, cine, el retiro... fueron más que suficientes.'
-                                        )}
+                                        {t([
+                                            'unos cafes',
+                                            'Unos cuantos cafés a la salida, cenas, cine, el retiro... fueron más que suficientes.',
+                                        ])}
                                     </p>
 
                                     <p>
-                                        {t(
-                                            'Siempre positiva, me encanta esto en ella, no existe el lado malo, y si lo hubiera, siempre tiene la solución para arreglarlo.'
-                                        )}
+                                        {t([
+                                            'siempre positiva',
+                                            'Siempre positiva, me encanta esto en ella, no existe el lado malo, y si lo hubiera, siempre tiene la solución para arreglarlo.',
+                                        ])}
                                     </p>
 
                                     <p>
-                                        {t(
-                                            'Como pisciana que es, sorprende su intuición, aprensión y amabilidad para con todo el mundo, a veces se hace la dura, pero le dura minutos.'
-                                        )}
+                                        {t([
+                                            'pisciana',
+                                            'Como pisciana que es, sorprende su intuición, aprensión y amabilidad para con todo el mundo, a veces se hace la dura, pero le dura minutos.',
+                                        ])}
                                     </p>
 
                                     <p>
-                                        {t(
-                                            '¡Que más decir! Que soy el hombre más afortunado por tenerla, que sin ella, nada tendría sentido.'
-                                        )}
+                                        {t([
+                                            'hombre afortunado',
+                                            '¡Que más decir! Que soy el hombre más afortunado por tenerla, que sin ella, nada tendría sentido.',
+                                        ])}
                                     </p>
                                 </PersonCard>
 
@@ -120,14 +132,16 @@ export default function Nosotros() {
                                     className="flex-1 flex"
                                 >
                                     <p>
-                                        {t(
-                                            'Nacido en Piatra Neamt (Rumania) en 1983, el destino quiso que su vida diera un giro de 360 grados al llegar a España, a veces fue fácil, otras no tanto, pero siempre adelante con esa fortaleza interior que le caracteriza.'
-                                        )}
+                                        {t([
+                                            'nacido en piatra',
+                                            'Nacido en Piatra Neamt (Rumania) en 1983, el destino quiso que su vida diera un giro de 360 grados al llegar a España, a veces fue fácil, otras no tanto, pero siempre adelante con esa fortaleza interior que le caracteriza.',
+                                        ])}
                                     </p>
                                     <p>
-                                        {t(
-                                            'Amigo de sus amigos, con un corazón que no le cabe, el cual intenta esconder tras una apariencia de duro, que problablemente sorprenda una vez le conoces, comprometedor a tope, siempre tratará de sacarte una sonrisa en los dias grises, aunque con él no funcione, pues como buen Libra que es, no le sacarás tan fácilmente de la cabeza su opinión.'
-                                        )}
+                                        {t([
+                                            'amigo de sus amigos',
+                                            'Amigo de sus amigos, con un corazón que no le cabe, el cual intenta esconder tras una apariencia de duro, que problablemente sorprenda una vez le conoces, comprometedor a tope, siempre tratará de sacarte una sonrisa en los dias grises, aunque con él no funcione, pues como buen Libra que es, no le sacarás tan fácilmente de la cabeza su opinión.',
+                                        ])}
                                     </p>
                                 </PersonCard>
                             </div>
@@ -148,19 +162,22 @@ export default function Nosotros() {
                                         {t('Nos conocimos...')}
                                     </H2>
                                     <p>
-                                        {t(
-                                            'allá por el 2006. Una mirada bastó, los dos sentimos algo tan especial que no se puede describir (we swear!!!).'
-                                        )}
+                                        {t([
+                                            'una mirada',
+                                            'Allá por el 2006. Una mirada bastó, los dos sentimos algo tan especial que no se puede describir (we swear!!!).',
+                                        ])}
                                     </p>
                                     <p>
-                                        {t(
-                                            'Hace ya 12 años que emprendimos el viaje de nuestras vidas , un billete de embarque llamado destino, hizo que nos encontráramos y que desde entonces no podamos estar el uno sin el otro.'
-                                        )}
+                                        {t([
+                                            'viaje de nuestras vidas',
+                                            'Hace ya 12 años que emprendimos el viaje de nuestras vidas , un billete de embarque llamado destino, hizo que nos encontráramos y que desde entonces no podamos estar el uno sin el otro.',
+                                        ])}
                                     </p>
                                     <p>
-                                        {t(
-                                            'Y ahora... ¡Hemos decidido embarcarnos en un nuevo viaje! Dentro de nuestra maleta hemos guardado un gran hueco para que podáis compartir con nosotros esta gran aventura.'
-                                        )}
+                                        {t([
+                                            'nuevo viaje',
+                                            'Y ahora... ¡Hemos decidido embarcarnos en un nuevo viaje! Dentro de nuestra maleta hemos guardado un gran hueco para que podáis compartir con nosotros esta gran aventura.',
+                                        ])}
                                     </p>
                                 </div>
 
@@ -169,94 +186,109 @@ export default function Nosotros() {
                                         {t('Desde entonces...')}
                                     </H2>
                                     <p>
-                                        {t(
-                                            'los dos estamos en las nubes, colgados el uno del otro '
-                                        )}
+                                        {t([
+                                            'en las nubes',
+                                            'los dos estamos en las nubes, colgados el uno del otro',
+                                        ])}{' '}
                                         <strong>
                                             {t('LOVE IS IN THE AIR!!!')}
                                         </strong>
                                     </p>
                                     <p>
-                                        {t(
-                                            'En este viaje nos ha acompañado la mejor tripulación con la que se puede contar: VOSOTROS, porque habéis estado en los pasajes de nuestras vidas, familia, amigos, infancia, trabajo... a veces el billete ha sido bussines, otras no (para lo bueno y para lo malo, pero siempre ahí), todos y cada uno de vosotros tenéis y tendréis vuestro asiento en este viaje junto a nosotros.'
-                                        )}
+                                        {t([
+                                            'la tripulacion',
+                                            'En este viaje nos ha acompañado la mejor tripulación con la que se puede contar: VOSOTROS, porque habéis estado en los pasajes de nuestras vidas, familia, amigos, infancia, trabajo... a veces el billete ha sido bussines, otras no (para lo bueno y para lo malo, pero siempre ahí), todos y cada uno de vosotros tenéis y tendréis vuestro asiento en este viaje junto a nosotros.',
+                                        ])}
                                     </p>
                                     <p>
-                                        {t(
-                                            'Queremos presentaros el vuelo más importante de nuestra vida...'
-                                        )}
-                                        <strong>{t(' NOS CASAMOS')}</strong>
-                                        {t(
-                                            '!!!! Siiiii!!!! Así que, haced ya el Check In, y abrocharos los cinturones que despegamos!!! Será un gran honor poder contar con vuestra presencia.'
-                                        )}
+                                        {t([
+                                            'presentaros el vuelo',
+                                            'Queremos presentaros el vuelo más importante de nuestra vida...',
+                                        ])}{' '}
+                                        <strong>{t('NOS CASAMOS')}!!</strong>{' '}
+                                        {t([
+                                            'los cinturones',
+                                            '!!!! Siiiii!!!! Así que, haced ya el Check In, y abrocharos los cinturones que despegamos!!! Será un gran honor poder contar con vuestra presencia.',
+                                        ])}
                                     </p>
 
                                     <div className="bg-gray-200 p-8 text-sm text-left border-l-4 border-blue-900 mt-6">
                                         <p className="mb-4">
-                                            {t(
-                                                'Hay momentos en la vida que son especiales por si solos. Compartirlos con las personas que queremos los convierte en momentos inolvidables.'
-                                            )}
+                                            {t([
+                                                'momentos especiales',
+                                                'Hay momentos en la vida que son especiales por si solos. Compartirlos con las personas que queremos los convierte en momentos inolvidables.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Ahora no sentiréis que la lluvia os moja porque cada uno de vosotros será el amparo del otro.'
-                                            )}
-                                        </p>
-                                        
-                                        <p className="italic">
-                                            {t(
-                                                'Ahora no sentiréis el frío porque cada uno de vosotros será el abrigo del otro.'
-                                            )}
+                                            {t([
+                                                'la lluvia no moja',
+                                                'Ahora no sentiréis que la lluvia os moja porque cada uno de vosotros será el amparo del otro.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Ahora vosotros sois dos personas pero a partir de ahora seréis una sola.'
-                                            )}
+                                            {t([
+                                                'no hay frio',
+                                                'Ahora no sentiréis el frío porque cada uno de vosotros será el abrigo del otro.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Id ahora a vuestro hogar para comenzar los días de vuestra vida juntos. Y quizás sus días sean largos y buenos sobre la tierra.'
-                                            )}
+                                            {t([
+                                                'una sola',
+                                                'Ahora vosotros sois dos personas pero a partir de ahora seréis una sola.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Trataros a vosotros mismos y al otro con respeto y recordad a menudo qué os ha unido.'
-                                            )}
+                                            {t([
+                                                'id ahora',
+                                                'Id ahora a vuestro hogar para comenzar los días de vuestra vida juntos. Y quizás sus días sean largos y buenos sobre la tierra.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Dad la mayor prioridad a la ternura, gentileza y bondad que vuestra unión merece.'
-                                            )}
+                                            {t([
+                                                'trataos con respeto',
+                                                'Trataros a vosotros mismos y al otro con respeto y recordad a menudo qué os ha unido.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Cuando la frustración, la dificultad y el temor asalten la relacion, como aquello que amenaza todo tarde o temprano, recordad centraros en lo positivo, no solamente en la parte que se ve equivocada.'
-                                            )}
+                                            {t([
+                                                'la mayor prioridad',
+                                                'Dad la mayor prioridad a la ternura, gentileza y bondad que vuestra unión merece.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'En este camino, podéis cabalgar lejos de las tormentas cuando las nubes oculten la cara del sol en vuestras vidas, recordad que aunque lo perdáis de vista por un instante, el sol aún sigue ahí.'
-                                            )}
+                                            {t([
+                                                'frustracion',
+                                                'Cuando la frustración, la dificultad y el temor asalten la relacion, como aquello que amenaza todo tarde o temprano, recordad centraros en lo positivo, no solamente en la parte que se ve equivocada.',
+                                            ])}
                                         </p>
 
                                         <p className="italic">
-                                            {t(
-                                                'Y si cada uno de vosotros se responsabiliza por vuestra calidad de vida juntos, seréis bendecidos con la abundancia y la felicidad.'
-                                            )}
+                                            {t([
+                                                'en este camino',
+                                                'En este camino, podéis cabalgar lejos de las tormentas cuando las nubes oculten la cara del sol en vuestras vidas, recordad que aunque lo perdáis de vista por un instante, el sol aún sigue ahí.',
+                                            ])}
+                                        </p>
+
+                                        <p className="italic">
+                                            {t([
+                                                'cada uno se responsabiliza',
+                                                'Y si cada uno de vosotros se responsabiliza por vuestra calidad de vida juntos, seréis bendecidos con la abundancia y la felicidad.',
+                                            ])}
                                         </p>
 
                                         <p className="text-right font-bold mt-4">
-                                            {t(
-                                                'Bendición Nativo americana (Apache) del matrimonio'
-                                            )}
-                                        </p> 
+                                            {t([
+                                                'bendicion nativoamericana',
+                                                'Bendición Nativo americana (Apache) del matrimonio',
+                                            ])}
+                                        </p>
                                     </div>
                                 </div>
                             </PersonCard>
