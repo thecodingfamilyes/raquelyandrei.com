@@ -143,6 +143,12 @@ export default function Nosotros() {
                                             'Amigo de sus amigos, con un corazón que no le cabe, el cual intenta esconder tras una apariencia de duro, que problablemente sorprenda una vez le conoces, comprometedor a tope, siempre tratará de sacarte una sonrisa en los dias grises, aunque con él no funcione, pues como buen Libra que es, no le sacarás tan fácilmente de la cabeza su opinión.',
                                         ])}
                                     </p>
+                                    <p>
+                                        {t([
+                                            'no puedo vivir',
+                                            'No puedo vivir sin él, no hay manera...',
+                                        ])}
+                                    </p>
                                 </PersonCard>
                             </div>
 
@@ -205,7 +211,10 @@ export default function Nosotros() {
                                             'presentaros el vuelo',
                                             'Queremos presentaros el vuelo más importante de nuestra vida...',
                                         ])}{' '}
-                                        <strong>{t('NOS CASAMOS')}!!</strong>{' '}
+                                        <strong>
+                                            {t('NOS CASAMOS')}
+                                            !!
+                                        </strong>{' '}
                                         {t([
                                             'los cinturones',
                                             '!!!! Siiiii!!!! Así que, haced ya el Check In, y abrocharos los cinturones que despegamos!!! Será un gran honor poder contar con vuestra presencia.',
