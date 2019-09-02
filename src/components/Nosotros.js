@@ -104,9 +104,10 @@ export default function Nosotros() {
                                     </p>
 
                                     <p>
-                                        {t(
-                                            'Como pisciana que es, sorprende su intuición y amabilidad para con todo el mundo, a veces se hace la dura, pero le dura minutos.'
-                                        )}
+                                        {t([
+                                            'pisciana',
+                                            'Como pisciana que es, sorprende su intuición y amabilidad para con todo el mundo, a veces se hace la dura, pero le dura minutos.',
+                                        ])}
                                     </p>
 
                                     <p>
