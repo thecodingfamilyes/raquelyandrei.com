@@ -69,7 +69,7 @@ export default function TimelineContent() {
                             relativePath: { eq: "foto-padrinos.jpeg" }
                         ) {
                             childImageSharp {
-                                fixed(width: 170) {
+                                fixed(width: 190) {
                                     ...GatsbyImageSharpFixed_withWebp
                                 }
                             }
@@ -159,10 +159,21 @@ export default function TimelineContent() {
                                     </div>
 
                                     <div className="py-4 sm:py-0 flex flex-1 justify-center sm:justify-end">
-                                        <div className="text-center lg:absolute">
+                                        <div className="text-center lg:relative">
                                             <Image
+                                                style={{
+                                                    display: 'block',
+                                                    height: '100%',
+                                                }}
                                                 {...FotoPadrinos.childImageSharp}
                                             />
+                                            <div className="photo-legend lg:absolute lg:bottom-0 text-white text-xs text-center w-full py-1 bg-black opacity-75">
+                                                <p>
+                                                    {t(
+                                                        'Anca y Marius, nuestros padrinos'
+                                                    )}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -203,10 +214,11 @@ export default function TimelineContent() {
                                                 <a
                                                     href="https://www.inbodas.com/fincas-para-bodas-en-madrid-sur/finca-los-cotos/"
                                                     target="_blank"
+                                                    rel="noopener noreferrer"
                                                     title="Los Cotos"
                                                     className="text-red-700"
                                                 >
-                                                    "Los Cotos"
+                                                    &quot;Los Cotos&quot;
                                                 </a>
                                             </span>{' '}
                                             {t(
