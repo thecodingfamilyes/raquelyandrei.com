@@ -170,7 +170,7 @@ export default function TimelineContent() {
                                             <div className="photo-legend lg:absolute lg:bottom-0 text-white text-xs text-center w-full py-1 bg-black opacity-75">
                                                 <p>
                                                     {t(
-                                                        'Anca y Marius, nuestros padrinos'
+                                                        'Nuestros padrinos: Anca y Marius'
                                                     )}
                                                 </p>
                                             </div>
